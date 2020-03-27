@@ -15,33 +15,46 @@ class Display extends Component{
 
     moveForward(){
         let currentIndex = this.state.currentIndex
+        if(currentIndex === 24){
+          this.setState({
+            currentProfile: data[0],
+            currentIndex: 0
+          })  
+        }else{
         this.setState({
             currentIndex: currentIndex +1,
             currentProfile: data[currentIndex +1]
         })
     }
+    }
 
     moveBack(){
         let currentIndex = this.state.currentIndex
+        if(currentIndex === 0){
+          this.setState({
+            currentProfile: data[24],
+            currentIndex: 24
+          })
+        } else{
         this.setState({
             currentIndex: currentIndex -1,
             currentProfile: data[currentIndex -1]
         })
     }
-    componentDidUpdate( prevProps, prevState) {
-        if(this.state.currentIndex === 24){
-            this.setState({
-                currentProfile: data[0],
-            currentIndex: 0,
-            })
-        }
-        // else if(this.state.currentIndex === 0){
-        //     this.setState({
-        //         currentProfile: data[25],
-        //         currentIndex: 25,
-        //     })
-        // }
     }
+    // componentDidUpdate( prevProps, prevState) {
+    //     if(prevState.currentIndex === 24){
+    //         this.setState({
+    //             currentProfile: data[0],
+    //         currentIndex: 0,
+    //         })
+    //     }         else if(prevState.currentIndex === 0){
+    //         this.setState({
+    //             currentProfile: data[24],
+    //             currentIndex: 24,
+    //         })
+    //     }
+    // }
 
 
     render(){
