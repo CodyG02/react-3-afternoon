@@ -28,7 +28,20 @@ class Display extends Component{
             currentProfile: data[currentIndex -1]
         })
     }
-    
+    componentDidUpdate( prevProps, prevState) {
+        if(this.state.currentIndex === 24){
+            this.setState({
+                currentProfile: data[0],
+            currentIndex: 0,
+            })
+        }
+        // else if(this.state.currentIndex === 0){
+        //     this.setState({
+        //         currentProfile: data[25],
+        //         currentIndex: 25,
+        //     })
+        // }
+    }
 
 
     render(){

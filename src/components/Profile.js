@@ -3,9 +3,14 @@ import React from 'react'
 
 function Profile(props) {
     console.log(props)
+
+    
+
+
     return(
         <div className='profile-info'>
-            <h1 className='name'>{props.currentProfile.name.first} {props.currentProfile.name.last}</h1>
+           <h1 className='name'>{props.currentProfile.name.first} {props.currentProfile.name.last}</h1>
+            <h2 className='info-tag'> {props.currentProfile.id}/25</h2>
             <h2 className='info-tag'>From: {props.currentProfile.city}, {props.currentProfile.country}</h2>
             <h2 className='info-tag'>Job Title: {props.currentProfile.title}</h2>
             <h2 className='info-tag'>Employer: {props.currentProfile.employer}</h2>
